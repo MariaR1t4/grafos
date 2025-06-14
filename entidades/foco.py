@@ -2,8 +2,7 @@ from typing import List
 
 
 class Foco:
-    """Representa um foco de incêndio com todas suas propriedades
-      e comportamentos."""
+    """Representa um foco de incêndio"""
 
     def __init__(self, id_foco: str, area_inicial: float, taxa_alpha: float):
         self.id = id_foco

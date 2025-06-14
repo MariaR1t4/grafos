@@ -12,9 +12,9 @@ class LeitorEntrada:
             with open(nome_arquivo, 'r') as f:
                 linhas = [linha.strip() for linha in f if linha.strip()]
                 
-                # Validação básica do arquivo
+                # Validação formato pedido edisciplinas
                 if len(linhas) < 4:
-                    raise ValueError("Arquivo de entrada incompleto")
+                    raise ValueError("Arquivo de entrada incorreto")
                 
                 # Linha 1: Números de focos e postos
                 try:
@@ -22,7 +22,6 @@ class LeitorEntrada:
                 except ValueError:
                     raise ValueError("Formato inválido na linha 1 - esperado dois números inteiros")
                 
-                # Valida número de linhas restantes
                 linhas_necessarias = 4 + num_focos + num_postos
                 if len(linhas) < linhas_necessarias:
                     raise ValueError(f"Arquivo deve ter pelo menos {linhas_necessarias} linhas")
@@ -32,7 +31,7 @@ class LeitorEntrada:
                 areas_iniciais = LeitorEntrada._ler_lista_float(linhas[2], num_focos, "áreas iniciais")
                 fatores_crescimento = LeitorEntrada._ler_lista_float(linhas[3], num_focos, "fatores de crescimento")
                 
-                # Matriz de distâncias
+                # matriz de distância (edisciplinas)
                 matriz_distancias = []
                 for i in range(4, 4 + num_focos + num_postos):
                     linha = LeitorEntrada._ler_lista_float(linhas[i], num_focos + num_postos, f"linha {i+1} da matriz")

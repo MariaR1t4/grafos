@@ -1,10 +1,9 @@
-import networkx as nx
 from typing import Dict, List, Optional
-# REMOVA os imports relativos (com ..) e use:
 from entidades.foco import Foco
 from entidades.posto import Posto
 from servicos.alocador_recursos import AlocadorRecursos
 
+import networkx as nx
 
 class SimuladorIncendios:
     """Classe principal que gerencia a simulação do combate a incêndios."""
@@ -27,9 +26,7 @@ class SimuladorIncendios:
     def carregar_dados(self, num_focos: int, num_postos: int, capacidades: List[float],
                        areas_iniciais: List[float], fatores_crescimento: List[float],
                        matriz_distancias: List[List[float]]) -> None:
-        """
-        Carrega todos os dados iniciais da simulação.
-        
+        """       
         Args:
             num_focos: Número de focos de incêndio
             num_postos: Número de postos de brigadistas
@@ -44,7 +41,7 @@ class SimuladorIncendios:
 
     def _criar_entidades(self, num_focos: int, num_postos: int, capacidades: List[float],
                         areas_iniciais: List[float], fatores_crescimento: List[float]) -> None:
-        """Cria as entidades (focos e postos) a partir dos dados iniciais."""
+
         self.mapa_focos = {
             f"f{i}": Foco(f"f{i}", areas_iniciais[i], fatores_crescimento[i]) 
             for i in range(num_focos)
@@ -67,7 +64,7 @@ class SimuladorIncendios:
         """
         Executa um dia completo de simulação.
         
-        Returns:
+        Retorna:
             True se a simulação pode continuar, False se não foi possível alocar recursos
         """
         self.dia_atual += 1
@@ -129,7 +126,7 @@ class SimuladorIncendios:
         }
 
     def obter_estado_atual(self) -> Dict:
-        """Retorna um snapshot do estado atual da simulação."""
+        """Retorna um resumo do estado atual da simulação."""
         return {
             'dia': self.dia_atual,
             'focos': {f.id: {'area': f.area_atual, 'status': f.status} 
