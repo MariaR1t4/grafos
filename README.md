@@ -22,3 +22,13 @@
 ### 📂 `testes/`
 - 📄 `__init__.py`
 - 📄 `test_simulador.py` *(testes automatizados)*
+
+## Como utilizar
+### 🛠️ Configuração do Ambiente
+  1. Clone o repositório:
+  git clone https://github.com/MariaR1t4/grafos
+  cd ED
+### Instale as bibliotecas necessárias:
+  pip install networkx matplotlib
+### Executar teste:
+  python main.py testes/caso1.txt
