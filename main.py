@@ -4,6 +4,8 @@ from utils.leitor_entrada import LeitorEntrada
 from utils.relatorio import GeradorRelatorio
 from servicos.visualizacao import visualizar_grafo
 
+from pathlib import Path
+
 
 def main():
     if len(sys.argv) < 2:
@@ -17,6 +19,8 @@ def main():
         
     num_focos, num_postos, capacidades, areas_iniciais, fatores, matriz = dados
     
+    nome_base = Path('test_case1').stem
+
     # Visualização
     visualizar_grafo(num_focos, num_postos, matriz)
     
@@ -26,12 +30,15 @@ def main():
     resultados = simulador.simular()
     
     # Relatório
-    print(GeradorRelatorio.gerar_relatorio(
+    relatorio = GeradorRelatorio.gerar_relatorio(
         resultados,
         simulador.mapa_focos,
         simulador.mapa_postos,
-        simulador.historico_alocacoes
-    ))
+        simulador.historico_alocacoes,
+        nome_arquivo=nome_base
+    )
+
+    print("\n"+relatorio)
 
 
 if __name__ == '__main__':

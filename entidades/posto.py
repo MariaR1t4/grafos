@@ -1,6 +1,6 @@
 class Posto:
     """Representa um posto de brigadistas com capacidade de operação."""
-      
+     
     def __init__(self, id_posto: str, capacidade_total_ph: float):
         self.id = id_posto
         self.capacidade_total_ph = float(capacidade_total_ph)

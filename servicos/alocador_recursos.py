@@ -12,13 +12,13 @@ class AlocadorRecursos:
         self.mapa_focos = mapa_focos
         self.mapa_postos = mapa_postos
         self.grafo = grafo
-        self._precomputar_tempos_deslocamento()
+        self.precomputar_tempos_deslocamento()
 
-    def _precomputar_tempos_deslocamento(self) -> None:
+    def precomputar_tempos_deslocamento(self) -> None:
         """Pré-computa os tempos de deslocamento entre todos os nós."""
         self.tempos_deslocamento = dict(nx.all_pairs_dijkstra_path_length(self.grafo, weight='weight'))
 
-    def _obter_tempo_deslocamento(self, posto_id: str, foco_id: str) -> float:
+    def obter_tempo_deslocamento(self, posto_id: str, foco_id: str) -> float:
         """Retorna o tempo de deslocamento entre um posto e um foco."""
         return self.tempos_deslocamento.get(posto_id, {}).get(foco_id, float('inf'))
 
@@ -39,11 +39,11 @@ class AlocadorRecursos:
                 continue
                 
             # Encontrar postos candidatos para este foco
-            postos_candidatos = self._encontrar_postos_candidatos(foco)
+            postos_candidatos = self.encontrar_postos_candidatos(foco)
             
             # Alocar recursos dos postos para este foco
             for candidato in postos_candidatos:
-                alocacao = self._alocar_recurso_foco(candidato, foco)
+                alocacao = self.alocar_recurso_foco(candidato, foco)
                 if alocacao:
                     alocacoes.append(alocacao)
                     if foco.area_atual <= 0:
@@ -51,12 +51,12 @@ class AlocadorRecursos:
         
         return alocacoes
 
-    def _encontrar_postos_candidatos(self, foco: Foco) -> List[dict]:
+    def encontrar_postos_candidatos(self, foco: Foco) -> List[dict]:
         """Encontra postos que podem atender ao foco."""
         candidatos = []
         
         for posto in self.mapa_postos.values():
-            tempo_desloc = self._obter_tempo_deslocamento(posto.id, foco.id)
+            tempo_desloc = self.obter_tempo_deslocamento(posto.id, foco.id)
             tempo_combate = posto.tempo_trabalho_diario - tempo_desloc
             
             if tempo_combate > 0 and posto.capacidade_disponivel() > 0:
@@ -69,7 +69,7 @@ class AlocadorRecursos:
         # Ordenar por maior capacidade disponível e menor tempo de deslocamento
         return sorted(candidatos, key=lambda x: (-x['posto'].capacidade_disponivel(), x['tempo_desloc']))
 
-    def _alocar_recurso_foco(self, candidato: dict, foco: Foco) -> Optional[dict]:
+    def alocar_recurso_foco(self, candidato: dict, foco: Foco) -> Optional[dict]:
         """Tenta alocar recurso de um posto para um foco."""
         posto = candidato['posto']
         tempo_combate = candidato['tempo_combate']

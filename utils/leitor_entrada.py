@@ -5,7 +5,6 @@ import sys
 class LeitorEntrada:
     """Responsável por ler e validar os dados de entrada do simulador."""
     
-    @staticmethod
     def ler_arquivo(nome_arquivo: str) -> Optional[Tuple]:
         """Lê e valida um arquivo de entrada."""
         try:
@@ -27,14 +26,14 @@ class LeitorEntrada:
                     raise ValueError(f"Arquivo deve ter pelo menos {linhas_necessarias} linhas")
                 
                 # Linhas seguintes: capacidades, áreas, fatores de crescimento
-                capacidades = LeitorEntrada._ler_lista_float(linhas[1], num_postos, "capacidades dos postos")
-                areas_iniciais = LeitorEntrada._ler_lista_float(linhas[2], num_focos, "áreas iniciais")
-                fatores_crescimento = LeitorEntrada._ler_lista_float(linhas[3], num_focos, "fatores de crescimento")
+                capacidades = LeitorEntrada.ler_lista_float(linhas[1], num_postos, "capacidades dos postos")
+                areas_iniciais = LeitorEntrada.ler_lista_float(linhas[2], num_focos, "áreas iniciais")
+                fatores_crescimento = LeitorEntrada.ler_lista_float(linhas[3], num_focos, "fatores de crescimento")
                 
                 # matriz de distância (edisciplinas)
                 matriz_distancias = []
                 for i in range(4, 4 + num_focos + num_postos):
-                    linha = LeitorEntrada._ler_lista_float(linhas[i], num_focos + num_postos, f"linha {i+1} da matriz")
+                    linha = LeitorEntrada.ler_lista_float(linhas[i], num_focos + num_postos, f"linha {i+1} da matriz")
                     matriz_distancias.append(linha)
                 
                 return (num_focos, num_postos, capacidades, areas_iniciais, 
@@ -47,8 +46,7 @@ class LeitorEntrada:
             print(f"Erro no arquivo '{nome_arquivo}': {str(e)}", file=sys.stderr)
             return None
         
-    @staticmethod
-    def _validar_matriz_distancias(matriz: List[List[float]], num_nos: int) -> None:
+    def validar_matriz_distancias(matriz: List[List[float]], num_nos: int) -> None:
         """Valida a matriz de distâncias."""
         if len(matriz) != num_nos:
             raise ValueError(f"Matriz deve ter {num_nos} linhas")
@@ -58,8 +56,7 @@ class LeitorEntrada:
             if any(x < 0 for x in linha):
                 raise ValueError("Distancias não podem ser negativas")
 
-    @staticmethod
-    def _ler_lista_float(linha: str, tamanho_esperado: int, descricao: str) -> List[float]:
+    def ler_lista_float(linha: str, tamanho_esperado: int, descricao: str) -> List[float]:
         """Lê e valida uma lista de valores float."""
         try:
             valores = list(map(float, linha.split()))

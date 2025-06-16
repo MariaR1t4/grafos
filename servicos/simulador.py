@@ -5,6 +5,7 @@ from servicos.alocador_recursos import AlocadorRecursos
 
 import networkx as nx
 
+
 class SimuladorIncendios:
     """Classe principal que gerencia a simulação do combate a incêndios."""
     
@@ -40,7 +41,7 @@ class SimuladorIncendios:
         self.alocador = AlocadorRecursos(self.mapa_focos, self.mapa_postos, self.grafo)
 
     def _criar_entidades(self, num_focos: int, num_postos: int, capacidades: List[float],
-                        areas_iniciais: List[float], fatores_crescimento: List[float]) -> None:
+                         areas_iniciais: List[float], fatores_crescimento: List[float]) -> None:
 
         self.mapa_focos = {
             f"f{i}": Foco(f"f{i}", areas_iniciais[i], fatores_crescimento[i]) 
@@ -111,9 +112,9 @@ class SimuladorIncendios:
             if not self.executar_dia():
                 break  # Falha na alocação
         
-        return self._gerar_resultados()
+        return self.gerar_resultados()
 
-    def _gerar_resultados(self) -> Dict:
+    def gerar_resultados(self) -> Dict:
         """Compila os resultados finais da simulação."""
         return {
             'sucesso': not any(f.status == 'ativo' for f in self.mapa_focos.values()),

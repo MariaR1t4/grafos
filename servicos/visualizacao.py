@@ -76,19 +76,18 @@ def visualizar_grafo(num_focos: int, num_postos: int,
                  "FOCOS (vermelho) | POSTOS (azul)", 
                  ha='center',
                  bbox=dict(facecolor='#ecf0f1', alpha=0.7, boxstyle='round,pad=0.5'))
-        
-        
+           
         nome_saida = f"images/grafo_incendio_{nome_arquivo}.png"
         try:
             plt.savefig(nome_saida, dpi=150, bbox_inches='tight')
-            print(f"✓ Gráfico salvo como {nome_saida}")
+            print(f"Gráfico salvo como {nome_saida}")
         except Exception as e:
-            print(f"⚠ Erro ao salvar gráfico: {str(e)}")
+            print(f"Erro ao salvar gráfico: {str(e)}")
             nome_saida = None
         
         plt.close()
         return nome_saida
         
     except Exception as e:
-        print(f"⚠ Erro para criar gráfico: {str(e)}")
+        print(f"Erro para criar gráfico: {str(e)}")
         return None
