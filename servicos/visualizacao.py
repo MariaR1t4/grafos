@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 def visualizar_grafo(num_focos: int, num_postos: int, 
                      matriz_distancias: List[List[float]], 
-                     nome_arquivo: str = "case1"):
+                     nome_arquivo: str = "edisciplinas"):
     """
     Gera uma visualização do grafo, altera nome
     
@@ -77,7 +77,7 @@ def visualizar_grafo(num_focos: int, num_postos: int,
                  ha='center',
                  bbox=dict(facecolor='#ecf0f1', alpha=0.7, boxstyle='round,pad=0.5'))
            
-        nome_saida = f"images/grafo_incendio_{nome_arquivo}.png"
+        nome_saida = f"outputs/images/grafo_incendio_{nome_arquivo}.png"
         try:
             plt.savefig(nome_saida, dpi=150, bbox_inches='tight')
             print(f"Gráfico salvo como {nome_saida}")

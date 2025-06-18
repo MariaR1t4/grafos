@@ -12,7 +12,7 @@ class GeradorRelatorio:
     def gerar_relatorio(resultados: Dict, mapa_focos: Dict[str, Foco], 
                         mapa_postos: Dict[str, Posto],
                         historico_de_alocacoes: List[List[dict]],
-                        nome_arquivo: str = None) -> str:
+                        nome_arquivo: str = "edisciplinas") -> str:
     
         """Gera um relatório simulação."""
         partes = []
@@ -30,17 +30,13 @@ class GeradorRelatorio:
         partes.extend(GeradorRelatorio.historico_alocacoes(historico_de_alocacoes))
         
         texto_completo = "\n".join(partes)
-
-        if nome_arquivo:
-            try:
-                caminho = Path("outputs")/f"{nome_arquivo}.txt"
-                caminho.parent.mkdir(exist_ok=True)
-                with open(caminho, 'w', encoding='utf-8') as f:
-                    f.write(texto_completo)
-                print(f'Relatório salvo com sucesso em {caminho}')
-            except Exception as e:
-                print(f'Erro ao salvar o relatório: {str(e)}')
-
+        nome_saida = f"outputs/relatorios/grafo_incendio_{nome_arquivo}.txt"
+        try:
+            with open(nome_saida, 'w', encoding='utf-8') as f:
+                f.write(texto_completo)
+            print(f'Relatório salvo com sucesso em {nome_saida}')
+        except Exception as e:
+            print(f'Erro ao salvar o relatório: {str(e)}')
         return texto_completo
 
     def cabecalho_relatorio(resultados: Dict) -> str:

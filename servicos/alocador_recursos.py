@@ -37,7 +37,6 @@ class AlocadorRecursos:
         ):
             if foco.area_atual <= 0:
                 continue
-                
             # Encontrar postos candidatos para este foco
             postos_candidatos = self.encontrar_postos_candidatos(foco)
             

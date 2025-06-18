@@ -19,7 +19,8 @@ class LeitorEntrada:
                 try:
                     num_focos, num_postos = map(int, linhas[0].split())
                 except ValueError:
-                    raise ValueError("Formato inválido na linha 1 - esperado dois números inteiros")
+                    raise ValueError("Formato inválido na linha 1 "
+                                     "esperado dois números inteiros")
                 
                 linhas_necessarias = 4 + num_focos + num_postos
                 if len(linhas) < linhas_necessarias:

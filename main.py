@@ -35,7 +35,6 @@ def main():
         simulador.mapa_focos,
         simulador.mapa_postos,
         simulador.historico_alocacoes,
-        nome_arquivo=nome_base
     )
 
     print("\n"+relatorio)
