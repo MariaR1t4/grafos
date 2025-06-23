@@ -46,16 +46,6 @@ class LeitorEntrada:
         except ValueError as e:
             print(f"Erro no arquivo '{nome_arquivo}': {str(e)}", file=sys.stderr)
             return None
-        
-    def validar_matriz_distancias(matriz: List[List[float]], num_nos: int) -> None:
-        """Valida a matriz de distâncias."""
-        if len(matriz) != num_nos:
-            raise ValueError(f"Matriz deve ter {num_nos} linhas")
-        for linha in matriz:
-            if len(linha) != num_nos:
-                raise ValueError("Matriz deve ser quadrada")
-            if any(x < 0 for x in linha):
-                raise ValueError("Distancias não podem ser negativas")
 
     def ler_lista_float(linha: str, tamanho_esperado: int, descricao: str) -> List[float]:
         """Lê e valida uma lista de valores float."""

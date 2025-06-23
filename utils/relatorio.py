@@ -12,7 +12,7 @@ class GeradorRelatorio:
     def gerar_relatorio(resultados: Dict, mapa_focos: Dict[str, Foco], 
                         mapa_postos: Dict[str, Posto],
                         historico_de_alocacoes: List[List[dict]],
-                        nome_arquivo: str = "edisciplinas") -> str:
+                        nome_arquivo: str = "test") -> str:
     
         """Gera um relatório simulação."""
         partes = []
