@@ -1,5 +1,5 @@
 # Estrutura de dados
-## estrutura do projeto 
+## Estrutura do projeto 
 
 ### 📄 `main.py` *(arquivo principal)*
 
