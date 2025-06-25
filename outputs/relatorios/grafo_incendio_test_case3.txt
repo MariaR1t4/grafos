@@ -1,0 +1,38 @@
+Todos os focos foram extintos em 1 DIAS.
+
+ DETALHES POR FOCO:
+  - f0: EXTINTO | Dia extinção: 0 | Área inicial: 82.00 km² | Crescimento: 1.11x/dia
+  - f1: EXTINTO | Dia extinção: 0 | Área inicial: 100.00 km² | Crescimento: 1.79x/dia
+  - f2: EXTINTO | Dia extinção: 0 | Área inicial: 130.00 km² | Crescimento: 1.79x/dia
+  - f3: EXTINTO | Dia extinção: 0 | Área inicial: 130.00 km² | Crescimento: 1.98x/dia
+  - f4: EXTINTO | Dia extinção: 0 | Área inicial: 30.00 km² | Crescimento: 1.07x/dia
+  - f5: EXTINTO | Dia extinção: 0 | Área inicial: 75.00 km² | Crescimento: 1.05x/dia
+  - f6: EXTINTO | Dia extinção: 0 | Área inicial: 60.00 km² | Crescimento: 1.88x/dia
+  - f7: EXTINTO | Dia extinção: 0 | Área inicial: 97.00 km² | Crescimento: 1.72x/dia
+
+ RECURSOS DOS POSTOS:
+  - b0: Capacidade total 5.00 km²/h
+  - b1: Capacidade total 10.00 km²/h
+  - b2: Capacidade total 6.00 km²/h
+  - b3: Capacidade total 7.00 km²/h
+  - b4: Capacidade total 12.00 km²/h
+  - b5: Capacidade total 7.00 km²/h
+  - b6: Capacidade total 15.00 km²/h
+  - b7: Capacidade total 7.00 km²/h
+  - b8: Capacidade total 11.00 km²/h
+  - b9: Capacidade total 15.00 km²/h
+
+ HISTÓRICO DE ALOCAÇÕES DIÁRIAS:
+
+  Dia 1:
+    b9 → f2: 14.44 km²/h por 9.0h (Total: 130.00 km²)
+    b6 → f3: 14.44 km²/h por 9.0h (Total: 130.00 km²)
+    b4 → f1: 10.00 km²/h por 10.0h (Total: 100.00 km²)
+    b8 → f7: 9.70 km²/h por 10.0h (Total: 97.00 km²)
+    b1 → f0: 10.00 km²/h por 7.0h (Total: 70.00 km²)
+    b3 → f0: 1.71 km²/h por 7.0h (Total: 12.00 km²)
+    b5 → f5: 7.00 km²/h por 10.0h (Total: 70.00 km²)
+    b7 → f5: 0.83 km²/h por 6.0h (Total: 5.00 km²)
+    b7 → f6: 6.17 km²/h por 9.0h (Total: 55.50 km²)
+    b2 → f6: 0.75 km²/h por 6.0h (Total: 4.50 km²)
+    b3 → f4: 2.73 km²/h por 11.0h (Total: 30.00 km²)

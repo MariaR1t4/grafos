@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 def visualizar_grafo(num_focos: int, num_postos: int, 
                      matriz_distancias: List[List[float]], 
-                     nome_arquivo: str = "test"):
+                     nome_arquivo: str = 'test_case10'):
     """
     Gera uma visualização do grafo, altera nome
     

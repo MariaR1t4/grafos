@@ -1,0 +1,17 @@
+Todos os focos foram extintos em 1 DIAS.
+
+ DETALHES POR FOCO:
+  - f0: EXTINTO | Dia extinção: 0 | Área inicial: 100.00 km² | Crescimento: 1.5x/dia
+  - f1: EXTINTO | Dia extinção: 0 | Área inicial: 87.00 km² | Crescimento: 1.25x/dia
+
+ RECURSOS DOS POSTOS:
+  - b0: Capacidade total 10.00 km²/h
+  - b1: Capacidade total 8.00 km²/h
+  - b2: Capacidade total 5.00 km²/h
+
+ HISTÓRICO DE ALOCAÇÕES DIÁRIAS:
+
+  Dia 1:
+    b0 → f0: 9.09 km²/h por 11.0h (Total: 100.00 km²)
+    b1 → f1: 8.00 km²/h por 6.0h (Total: 48.00 km²)
+    b2 → f1: 4.88 km²/h por 8.0h (Total: 39.00 km²)

@@ -36,9 +36,11 @@ class SimuladorIncendios:
             fatores_crescimento: Lista de fatores de crescimento diário dos focos
             matriz_distancias: Matriz de distâncias entre todos os nós
         """
-        self._criar_entidades(num_focos, num_postos, capacidades, areas_iniciais, fatores_crescimento)
+        self._criar_entidades(num_focos, num_postos, capacidades, 
+                              areas_iniciais, fatores_crescimento)
         self._construir_grafo(matriz_distancias)
-        self.alocador = AlocadorRecursos(self.mapa_focos, self.mapa_postos, self.grafo)
+        self.alocador = AlocadorRecursos(self.mapa_focos, self.mapa_postos,
+                                         self.grafo)
 
     def _criar_entidades(self, num_focos: int, num_postos: int, capacidades: List[float],
                          areas_iniciais: List[float], fatores_crescimento: List[float]) -> None:

@@ -7,12 +7,12 @@ from pathlib import Path
 
 
 class GeradorRelatorio:
-    """Gera relatórios detalhados sobre a simulação."""
+    """Gera relatórios detalhados sobre a simulação. São printados na pasta output"""
     
     def gerar_relatorio(resultados: Dict, mapa_focos: Dict[str, Foco], 
                         mapa_postos: Dict[str, Posto],
                         historico_de_alocacoes: List[List[dict]],
-                        nome_arquivo: str = "test") -> str:
+                        nome_arquivo: str = "test_case10") -> str:
     
         """Gera um relatório simulação."""
         partes = []

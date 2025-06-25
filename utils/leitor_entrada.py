@@ -10,8 +10,8 @@ class LeitorEntrada:
         try:
             with open(nome_arquivo, 'r') as f:
                 linhas = [linha.strip() for linha in f if linha.strip()]
-                
-                # Validação formato pedido edisciplinas
+               
+                # Validação formato pedido no edisciplinas
                 if len(linhas) < 4:
                     raise ValueError("Arquivo de entrada incorreto")
                 
@@ -26,7 +26,7 @@ class LeitorEntrada:
                 if len(linhas) < linhas_necessarias:
                     raise ValueError(f"Arquivo deve ter pelo menos {linhas_necessarias} linhas")
                 
-                # Linhas seguintes: capacidades, áreas, fatores de crescimento
+                # Linhas seguintes: capacidades por posto brigadista, áreas, fatores de crescimento
                 capacidades = LeitorEntrada.ler_lista_float(linhas[1], num_postos, "capacidades dos postos")
                 areas_iniciais = LeitorEntrada.ler_lista_float(linhas[2], num_focos, "áreas iniciais")
                 fatores_crescimento = LeitorEntrada.ler_lista_float(linhas[3], num_focos, "fatores de crescimento")
