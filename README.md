@@ -28,7 +28,7 @@
   - Clone o repositório:
   - git clone https://github.com/MariaR1t4/grafos
   - cd ED
-### Instale as bibliotecas necessárias em `requirements.txt`:
+### Instale as bibliotecas necessárias em `requirements.txt`
 
 ### Executar teste:
   python main.py testes/nome_arquivo.txt
