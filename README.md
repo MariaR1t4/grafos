@@ -25,10 +25,13 @@
 
 ## Como utilizar
 ### 🛠️ Configuração do Ambiente
-  1. Clone o repositório:
-  git clone https://github.com/MariaR1t4/grafos
-  cd ED
-### Instale as bibliotecas necessárias:
-  pip install networkx matplotlib
+  - Clone o repositório:
+  - git clone https://github.com/MariaR1t4/grafos
+  - cd ED
+### Instale as bibliotecas necessárias em `requirements.txt`:
+
 ### Executar teste:
-  python main.py testes/caso1.txt
+  python main.py testes/nome_arquivo.txt
+
+## Features:
+- Rodar testes `in batch`, no presente modelo os testes devem ser chamados de forma unitária.
