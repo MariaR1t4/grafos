@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 def visualizar_grafo(num_focos: int, num_postos: int, 
                      matriz_distancias: List[List[float]], 
-                     nome_arquivo: str = 'test_case10'):
+                     nome_arquivo: str = 'e'):
     """
     Gera uma visualização do grafo, altera nome
     
@@ -32,13 +32,13 @@ def visualizar_grafo(num_focos: int, num_postos: int,
         G = nx.Graph()
         
         #cor dos nós
-        for i in range(1, num_focos + 1):
+        for i in range(0, num_focos):
             G.add_node(f'f{i}', tipo='foco', color='#e74c3c')  # Vermelho
-        for i in range(1, num_postos + 1):
+        for i in range(0, num_postos):
             G.add_node(f'b{i}', tipo='posto', color='#3498db')  # Azul
         
         # arestas
-        todos_nos = [f'f{i}' for i in range(1, num_focos+1)] + [f'b{i}' for i in range(1, num_postos+1)]
+        todos_nos = [f'f{i}' for i in range(0, num_focos)] + [f'b{i}' for i in range(0, num_postos)]
         for i in range(len(todos_nos)):
             for j in range(len(todos_nos)):
                 if matriz_distancias[i][j] > 0:

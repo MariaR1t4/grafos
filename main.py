@@ -6,7 +6,12 @@ from servicos.visualizacao import visualizar_grafo
 
 from pathlib import Path
 
-
+'''
+ANTONIO AUGUSTO NUNES DE SOUZA 15440698
+ASHTON APEBIO MERGULHÃO SEGNIBO 15441765
+CESAR MÂNCIO SILVA 15635890 
+MARIA RITA SOUSA BORGES 15656239
+'''
 def main():
     if len(sys.argv) < 2:
         print("Uso: python main.py <arquivo_de_entrada>")

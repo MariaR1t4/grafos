@@ -12,12 +12,12 @@ class GeradorRelatorio:
     def gerar_relatorio(resultados: Dict, mapa_focos: Dict[str, Foco], 
                         mapa_postos: Dict[str, Posto],
                         historico_de_alocacoes: List[List[dict]],
-                        nome_arquivo: str = "test_case10") -> str:
+                        nome_arquivo: str = "e") -> str:
     
-        """Gera um relatório simulação."""
+        """Gera um relatório simulação, disponível em outputs."""
         partes = []
         
-        # Cabeçalho com resultado geral
+        # Cabeçalho com resultado 
         partes.append(GeradorRelatorio.cabecalho_relatorio(resultados))
         
         partes.append("\n DETALHES POR FOCO:")
